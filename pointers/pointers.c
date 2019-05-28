@@ -15,10 +15,17 @@
 */
 void string_copy(char *x, char *y)
 {
+    int strlen = 0;
 
+    while(*(y + strlen) != '\0'){
+        *(x+strlen) = *(y+strlen);
+        strlen++;
+    }
+
+    *(x+strlen) = '\0';
 }
 
-/*
+/*length
     Searches the input string `str` for the first instance of the 
     character `c` (an unsigned char). This function returns a pointer
     that points to the first instance of the character `c` in the
@@ -28,7 +35,13 @@ void string_copy(char *x, char *y)
 */
 char *find_char(char *str, int c)
 {
-
+    int find = 0;
+    while(*(str+find) != '\0'){
+        if(*(str + find) == 'c'){
+            return str + find;
+        }
+        find++;
+    }
 }
 
 /*
